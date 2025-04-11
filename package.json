@@ -12,8 +12,13 @@
     "url": "https://github.com/cotes2020/jekyll-theme-chirpy/issues"
   },
   "homepage": "https://github.com/cotes2020/jekyll-theme-chirpy#readme",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production rollup -c --bundleConfigAsCjs",
+    "dev": "cross-env NODE_ENV=development rollup -c --watch --bundleConfigAsCjs"
+  },
   "devDependencies": {
-    "gulp": "^4.0.2",
+    "cross-env": "^7.0.3",
+    "gulp": "^5.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-insert": "^0.5.0",
     "gulp-rename": "^2.0.0",
