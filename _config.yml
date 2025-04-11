@@ -88,7 +88,7 @@ comments:
     shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
   # utterances settings › https://utteranc.es/
   utterances:
-    repo: ToasT1ng/ToasT1ng.github.io # <gh-username>/<repo>
+    repo: clscks77/clscks77.github.io # <gh-username>/<repo>
     issue_term: pathname # < url | pathname | title | ...>
     label: Comment
   # Giscus options › https://giscus.app
