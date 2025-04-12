@@ -4,9 +4,9 @@
 
 /* sidebar */
 
-$sidebar-width: 260px !default;        /* the basic width */
-$sidebar-width-small: 210px !default;  /* screen width: >= 850px, <= 1199px (iPad landscape) */
-$sidebar-width-large: 350px !default;  /* screen width: >= 1650px */
+$sidebar-width: 210px !default;        /* the basic width : 260px */ 
+$sidebar-width-small: 160px !default;  /* screen width: >= 850px, <= 1199px (iPad landscape): 210px */
+$sidebar-width-large: 300px !default;  /* screen width: >= 1650px: 350px */
 
 /* tabs of sidebar */
 
@@ -23,9 +23,9 @@ $topbar-height: 3rem !default;
 $footer-height: 5rem !default;
 $footer-height-mobile: 6rem !default;   /* screen width: <= 576px */
 
-$main-content-max-width: 1150px !default;
+$main-content-max-width: 1050px !default; // 1150px
 
-$panel-max-width: 300px !default;
+$panel-max-width: 250px !default; // 300px
 
 $bottom-min-height: 35rem !default;
 

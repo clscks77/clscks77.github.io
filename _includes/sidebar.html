@@ -22,7 +22,7 @@
     </div>
 
     <div class="site-title mt-3">
-      <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <a href="{{ '/about/' | relative_url }}">{{ site.title }}</a>
     </div>
     <div class="site-subtitle font-italic">{{ site.tagline }}</div>
 
@@ -70,8 +70,7 @@
         {%- elsif entry.type == 'email' -%}
           {% assign email = site.social.email | split: '@' %}
           javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
-        {%- elsif entry.type == 'linkedin' -%}
-          https://www.linkedin.com/in/{{ site.linkedin.usercode }}
+        
         {%- else -%}
           {{ entry.url }}
         {%- endif -%}

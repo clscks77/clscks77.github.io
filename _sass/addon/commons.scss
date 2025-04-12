@@ -272,8 +272,8 @@ img[data-src] {
     margin: 0 0.35rem 0.5rem 0;
 
     &:hover {
-      background-color: #2a408e;
-      border-color: #2a408e;
+      background-color: #ccb494;
+      border-color: #ccb494;
       color: #fff;
       transition: none;
     }
@@ -1536,7 +1536,7 @@ $sidebar-display: "sidebar-display";
     padding-left: calc((100% - #{$main-content-max-width}) / 2);
 
     > div.col-xl-8 {
-      max-width: 850px;
+      max-width: 1050px; // 850px
     }
   }
 
@@ -1757,4 +1757,11 @@ $sidebar-display: "sidebar-display";
   #panel-wrapper {
     margin-left: 41px;
   }
+}
+
+/* Code block auto-wrap */
+pre {
+  white-space: pre-wrap !important;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }

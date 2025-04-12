@@ -1,16 +1,9 @@
 ---
 title:  "[Knldg] 윈도우 cmd에서 D드라이브로 가기"
-excerpt: "^0^"
-
-categories:
-  - ETC
-tags:
-  - [windows, cmd, file_system]
-
-toc: true
-toc_sticky: true
-
-date: 2025-04-12
+categories: [ETC, Windows]
+tags: [windows, cmd, file_system]
+date: 2025-04-12 02:13:00 +0900
+comments: false
 ---
 ---
 
