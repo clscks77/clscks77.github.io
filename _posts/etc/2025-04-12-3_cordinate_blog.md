@@ -15,11 +15,13 @@ comments: false
 - [x] title 누르면 About으로 가기
 - [x] Disqus 없애기
 - [x] 사이드바 구성 바꾸기
+- [ ] 사이드바 젤 밑에 여백 넣기
+- [ ] post글 젤 밑에 같은 카테고리의 글 리스트 5개 단위로 보여주는거 필요
 - [ ] Tag 본문 위로 올리고, 색 넣기
 - [ ] Top에 있는 카테고리 잘 안잡히는거 수정 + 위치 조정
 - [ ] TOC 손보기
 
-> 수정할 게 많네.. 이걸로 할걸 그랫나.. <https://github.com/mmistakes/minimal-mistakes?tab=readme-ov-file>
+> jekyll Doc 참고: <https://jekyllrb.com/docs/posts/>
 
 ---
 
