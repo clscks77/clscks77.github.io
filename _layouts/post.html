@@ -13,6 +13,12 @@ tail_includes:
 
 <h1 data-toc-skip>{{ page.title }}</h1>
 
+{% if page.excerpt %}
+  <p class="page-excerpt">
+    {{ page.excerpt | markdownify | strip_html | truncate: 200 }}
+  </p>
+{% endif %}
+
 <div class="post-meta text-muted">
     <!-- published date -->
     <span>
@@ -20,13 +26,7 @@ tail_includes:
       {% include datetime.html date=page.date tooltip=true %}
     </span>
 
-    <!-- lastmod date -->
-    {% if page.last_modified_at %}
-    <span>
-      {{ site.data.locales[lang].post.updated }}
-      {% include datetime.html date=page.last_modified_at tooltip=true %}
-    </span>
-    {% endif %}
+    <!-- lastmod date : deleted-->
 
   {% if page.image.path %}
     {% capture bg %}
@@ -57,27 +57,20 @@ tail_includes:
   {% endif %}
 
   <div class="d-flex justify-content-between">
-    <!-- author -->
-    <span>
-      {% capture author_name %}{{ site.data.authors[page.author].name | default: site.social.name }}{% endcapture %}
-      {% assign author_link = nil %}
-
-      {% if page.author %}
-        {% assign author_link = site.data.authors[page.author].url %}
-      {% elsif author_name == site.social.name %}
-        {% assign author_link = site.social.links[0] %}
-      {% endif %}
-
-      {{ site.data.locales[lang].post.written_by }}
-
-      <em>
-        {% if author_link %}
-          <a href="{{ author_link }}">{{ author_name }}</a>
-        {% else %}
-        {{ author_name }}
-        {% endif %}
-      </em>
-    </span>
+    <!-- author : deleted -->
+    
+    <!-- tags -->
+    {% if page.tags.size > 0 %}
+    <div class="post-tags">
+      <i class="fa fa-tags fa-fw mr-1"></i>
+        {% for tag in page.tags %}
+        <a href="{{ site.baseurl }}/tags/{{ tag | slugify | url_encode }}/"
+            class="post-tag no-text-decoration" >
+          {{- tag -}}
+        </a>
+        {% endfor %}
+    </div>
+    {% endif %}
 
     <div>
       <!-- page views -->
@@ -90,8 +83,8 @@ tail_includes:
       </span>
       {% endif %}
 
-      <!-- read time -->
-      {% include read-time.html content=content prompt=true %}
+      <!-- read time : deleted -->
+
     </div>
 
   </div> <!-- .d-flex -->

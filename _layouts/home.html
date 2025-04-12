@@ -52,7 +52,7 @@ layout: page
     <div class="post-content">
       <p>
         {% include no-linenos.html content=post.content %}
-        {{ content | markdownify | strip_html | truncate: 200 | escape }}
+        {{ post.excerpt | markdownify | strip_html | truncate: 200 | escape }}
       </p>
     </div>
 
@@ -72,6 +72,19 @@ layout: page
             {%- unless forloop.last -%},{%- endunless -%}
           {% endfor %}
           </span>
+        {% endif %}
+
+        <!-- tags (add) -->
+        {% if post.tags.size > 0 %}
+        <div class="post-tags">
+          <i class="fa fa-tags fa-fw mr-1"></i>
+            {% for tag in post.tags %}
+            <a href="{{ site.baseurl }}/tags/{{ tag | slugify | url_encode }}/"
+                class="post-tag no-text-decoration" >
+              {{- tag -}}
+            </a>
+            {% endfor %}
+        </div>
         {% endif %}
 
       </div>

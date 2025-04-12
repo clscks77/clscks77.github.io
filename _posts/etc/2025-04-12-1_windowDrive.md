@@ -4,6 +4,7 @@ categories: [ETC, Windows]
 tags: [windows, cmd, file_system]
 date: 2025-04-12 02:13:00 +0900
 comments: false
+excerpt: "cmd에서 D드라이브로 이동할려고 했는데.."
 ---
 ---
 

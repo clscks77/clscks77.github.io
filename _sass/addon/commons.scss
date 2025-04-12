@@ -2,6 +2,16 @@
   The common styles
 */
 
+::selection {
+  background: #ffe082;  // 밝은 주황색 배경
+  color: #000;          // 검정색 텍스트
+}
+
+.page-excerpt {
+  color: #757575;
+  font-size: 0.9rem;
+}
+
 html {
   @media (prefers-color-scheme: light) {
     &:not([data-mode]),
@@ -42,6 +52,7 @@ h1 {
   @extend %heading;
 
   font-size: 1.9rem;
+  font-weight: bold;
 }
 
 h2 {
@@ -50,6 +61,7 @@ h2 {
   @extend %anchor;
 
   font-size: 1.5rem;
+  font-weight: bold;
 }
 
 h3 {
@@ -58,6 +70,7 @@ h3 {
   @extend %anchor;
 
   font-size: 1.2rem;
+  font-weight: bold;
 }
 
 h4 {
@@ -66,6 +79,7 @@ h4 {
   @extend %anchor;
 
   font-size: 1.15rem;
+  font-weight: bold;
 }
 
 h5 {
@@ -74,6 +88,7 @@ h5 {
   @extend %anchor;
 
   font-size: 1.1rem;
+  font-weight: bold;
 }
 
 ol,

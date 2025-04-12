@@ -4,6 +4,7 @@ categories: [ETC, Blog]
 tags: [jekyll, github]
 date: 2025-04-12 14:30:00 +0900
 comments: false
+excerpt: "크고 작은 디자인 수정에 대한 기록"
 ---
 
 ---
@@ -15,9 +16,9 @@ comments: false
 - [x] title 누르면 About으로 가기
 - [x] Disqus 없애기
 - [x] 사이드바 구성 바꾸기
+- [x] Tag 본문 위로 올리기
 - [ ] 사이드바 젤 밑에 여백 넣기
 - [ ] post글 젤 밑에 같은 카테고리의 글 리스트 5개 단위로 보여주는거 필요
-- [ ] Tag 본문 위로 올리고, 색 넣기
 - [ ] Top에 있는 카테고리 잘 안잡히는거 수정 + 위치 조정
 - [ ] TOC 손보기
 
@@ -143,6 +144,46 @@ pre {
     - 다 없애고 Category 내용을 저기다가 보여주고 싶음
     - 근데 카테고리에서 밑으로 내려가는거 왜 안됨
     - 엥 tab 2번 하면 Plaintext 코드 블록으로 보여주나?
+
+## post에서 title-content 사이 개조
+```html
+{% raw %}
+<!-- 이것들 다 삭제하고 tag 위로 올려줌 (backup)-->
+
+<!-- lastmod date -->
+{% if page.last_modified_at %}
+    <span>
+      {{ site.data.locales[lang].post.updated }}
+      {% include datetime.html date=page.last_modified_at tooltip=true %}
+    </span>
+    {% endif %}
+
+<!-- author -->
+<span>
+      {% capture author_name %}{{ site.data.authors[page.author].name | default: site.social.name }}{% endcapture %}
+      {% assign author_link = nil %}
+
+      {% if page.author %}
+        {% assign author_link = site.data.authors[page.author].url %}
+      {% elsif author_name == site.social.name %}
+        {% assign author_link = site.social.links[0] %}
+      {% endif %}
+
+      {{ site.data.locales[lang].post.written_by }}
+
+      <em>
+        {% if author_link %}
+          <a href="{{ author_link }}">{{ author_name }}</a>
+        {% else %}
+        {{ author_name }}
+        {% endif %}
+      </em>
+    </span>
+
+<!-- read time -->
+      {% include read-time.html content=content prompt=true %}
+{% endraw %}
+```
 
 ## TOC 왜 2,3수준밖에 안보이지?
 - 그리고 3수준도 계속 보여줬음 하는데
