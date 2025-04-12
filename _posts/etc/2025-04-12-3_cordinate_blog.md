@@ -13,11 +13,13 @@ comments: false
 - [x] 코드 길어지면 자동 개행
 - [x] 링크드인 없애기
 - [x] title 누르면 About으로 가기
+- [x] Disqus 없애기
+- [x] 사이드바 구성 바꾸기
 - [ ] Tag 본문 위로 올리고, 색 넣기
-- [ ] Top에 있는 카테고리 잘 안잡히는거 수정
-- [ ] 사이드바 구성 바꾸기
+- [ ] Top에 있는 카테고리 잘 안잡히는거 수정 + 위치 조정
 - [ ] TOC 손보기
-- [ ] Disqus 없애기
+
+> 수정할 게 많네.. 이걸로 할걸 그랫나.. <https://github.com/mmistakes/minimal-mistakes?tab=readme-ov-file>
 
 ---
 

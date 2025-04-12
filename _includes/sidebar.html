@@ -1,6 +1,4 @@
-<!--
-  The Side Bar
--->
+<!-- Custom Sidebar -->
 
 <div id="sidebar" class="d-flex flex-column align-items-end">
   <div class="profile-wrapper text-center">
@@ -25,66 +23,117 @@
       <a href="{{ '/about/' | relative_url }}">{{ site.title }}</a>
     </div>
     <div class="site-subtitle font-italic">{{ site.tagline }}</div>
-
   </div><!-- .profile-wrapper -->
 
   <ul class="w-100">
 
-    <!-- home -->
-    <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
-      <a href="{{ '/' | relative_url }}" class="nav-link">
-        <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i>
-        <span>{{ site.data.locales[lang].tabs.home | upcase }}</span>
+    <!-- .sidebar-bottom; Mode toggle and icons -->
+    <div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center">
+      {% unless site.theme_mode %}
+        <button class="mode-toggle btn" aria-label="Switch Mode">
+          <i class="fas fa-adjust"></i>
+        </button>
+
+        {% if site.data.contact.size > 0 %}
+          <span class="icon-border"></span>
+        {% endif %}
+      {% endunless %}
+
+      {% for entry in site.data.contact %}
+        {% capture url %}
+          {%- if entry.type == 'github' -%}
+            https://github.com/{{ site.github.username }}
+          {%- elsif entry.type == 'email' -%}
+            {% assign email = site.social.email | split: '@' %}
+            javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
+          {%- else -%}
+            {{ entry.url }}
+          {%- endif %}
+        {% endcapture %}
+
+        {% if url %}
+        <a href="{{ url }}" aria-label="{{ entry.type }}"
+          {% unless entry.noblank %}target="_blank" rel="noopener"{% endunless %}>
+          <i class="{{ entry.icon }}"></i>
+        </a>
+        {% endif %}
+      {% endfor %}
+    </div> <!-- .sidebar-bottom -->
+
+    <!-- CATEGORIES -->
+    <li class="nav-item{% if page.url contains '/categories/' %} active{% endif %}">
+      <a href="{{ '/categories/' | relative_url }}" class="nav-link">
+        <i class="fa-fw fas fa-folder-open ml-xl-3 mr-xl-3 unloaded"></i>
+        <span>CATEGORIES</span>
       </a>
     </li>
-    <!-- the real tabs -->
-    {% for tab in site.tabs %}
-    <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
-      <a href="{{ tab.url | relative_url }}" class="nav-link">
-        <i class="fa-fw {{ tab.icon }} ml-xl-3 mr-xl-3 unloaded"></i>
-        {% capture tab_name %}{{ tab.url | split: '/' }}{% endcapture %}
-
-        <span>{{ site.data.locales[lang].tabs.[tab_name] | default: tab.title | upcase }}</span>
+  
+    <!-- TAGS -->
+    <li class="nav-item{% if page.url contains '/tags/' %} active{% endif %}">
+      <a href="{{ '/tags/' | relative_url }}" class="nav-link">
+        <i class="fa-fw fas fa-tags ml-xl-3 mr-xl-3 unloaded"></i>
+        <span>TAGS</span>
       </a>
-    </li> <!-- .nav-item -->
-    {% endfor %}
+    </li>
+  
+    <!-- 구분선 -->
+    <li class="nav-item">
+      <hr class="w-75 my-2 ml-xl-3 mr-xl-3" style="border-color: #ccc;">
+    </li>
+  
+    <!-- Hierarchical Categories -->
+    {% assign sorted_categories = site.categories | sort %}
+    {% assign HEAD_PREFIX = "h_" %}
+    {% assign group_index = 0 %}
 
-  </ul> <!-- ul.nav.flex-column -->
+    {% for category in sorted_categories %}
+      {% assign category_name = category[0] %}
+      {% assign posts_of_category = category[1] %}
+      {% assign first_post = posts_of_category | first %}
 
-  <div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center">
+      {% if category_name == first_post.categories[0] %}
+        <!-- 상위 카테고리 -->
+        {% assign parent_slug = category_name | slugify %}
+        <li class="nav-item">
+          <a href="{{ '/categories/' | append: parent_slug | append: '/' | relative_url }}" class="nav-link font-weight-bold text-category-top">
+            <span>■ {{ category_name }} ({{ posts_of_category | size }})</span>
+          </a>
+        </li>
 
-    {% unless site.theme_mode %}
-      <button class="mode-toggle btn" aria-label="Switch Mode">
-        <i class="fas fa-adjust"></i>
-      </button>
+        <!-- 하위 카테고리 추출 -->
+        {% assign sub_categories = "" | split: "" %}
+        {% for post in posts_of_category %}
+          {% assign second_category = post.categories[1] %}
+          {% if second_category %}
+            {% unless sub_categories contains second_category %}
+              {% assign sub_categories = sub_categories | push: second_category %}
+            {% endunless %}
+          {% endif %}
+        {% endfor %}
 
-      {% if site.data.contact.size > 0 %}
-        <span class="icon-border"></span>
+        {% assign sub_categories = sub_categories | sort %}
+
+        {% for sub_cat in sub_categories %}
+          {% assign sub_slug = sub_cat | slugify %}
+
+          <!-- post count for this specific parent-child pair -->
+          {% assign post_count = 0 %}
+          {% for post in posts_of_category %}
+            {% if post.categories[1] == sub_cat %}
+              {% assign post_count = post_count | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+
+          {% if post_count > 0 %}
+          <li class="nav-item">
+            <a href="{{ '/categories/' | append: sub_slug | append: '/' | relative_url }}" class="nav-link pl-4">
+              <span>•• {{ sub_cat }} ({{ post_count }})</span>
+            </a>
+          </li>
+          {% endif %}
+        {% endfor %}
       {% endif %}
-    {% endunless %}
-
-    {% for entry in site.data.contact %}
-      {% capture url %}
-        {%- if entry.type == 'github' -%}
-          https://github.com/{{ site.github.username }}
-        {%- elsif entry.type == 'email' -%}
-          {% assign email = site.social.email | split: '@' %}
-          javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
-        
-        {%- else -%}
-          {{ entry.url }}
-        {%- endif -%}
-      {% endcapture %}
-
-      {% if url %}
-      <a href="{{ url }}" aria-label="{{ entry.type }}"
-        {% unless entry.noblank %}target="_blank" rel="noopener"{% endunless %}>
-        <i class="{{ entry.icon }}"></i>
-      </a>
-      {% endif %}
-
     {% endfor %}
-
-  </div> <!-- .sidebar-bottom -->
+  </ul>
 
 </div><!-- #sidebar -->
