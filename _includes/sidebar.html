@@ -96,7 +96,7 @@
         {% assign parent_slug = category_name | slugify %}
         <li class="nav-item">
           <a href="{{ '/categories/' | append: parent_slug | append: '/' | relative_url }}" class="nav-link font-weight-bold text-category-top">
-            <span>■ {{ category_name }} ({{ posts_of_category | size }})</span>
+            <span>{{ category_name }} ({{ posts_of_category | size }})</span>
           </a>
         </li>
 
@@ -127,7 +127,7 @@
           {% if post_count > 0 %}
           <li class="nav-item">
             <a href="{{ '/categories/' | append: sub_slug | append: '/' | relative_url }}" class="nav-link pl-4">
-              <span>•• {{ sub_cat }} ({{ post_count }})</span>
+              <span>{{ sub_cat }} ({{ post_count }})</span>
             </a>
           </li>
           {% endif %}
