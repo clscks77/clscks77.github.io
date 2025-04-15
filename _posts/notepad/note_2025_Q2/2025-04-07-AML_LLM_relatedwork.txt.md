@@ -1,5 +1,5 @@
 ---
-title: "[Note] 25-04-07 AML_LLM_relatedwork.txt"
+title: "[Note] 25-04-07 AML_LLM_relatedwork"
 categories: [Notepad, Daily]
 tags: 
 date: 2025-04-07 21:49:00 +0900

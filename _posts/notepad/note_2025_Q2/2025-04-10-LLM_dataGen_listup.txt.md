@@ -1,5 +1,5 @@
 ---
-title: "[Note] 25-04-10 LLM_dataGen_listup.txt"
+title: "[Note] 25-04-10 LLM_dataGen_listup"
 categories: [Notepad, Daily]
 tags: 
 date: 2025-04-10 21:49:00 +0900

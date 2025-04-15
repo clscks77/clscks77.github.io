@@ -1,5 +1,5 @@
 ---
-title: "[Note] 25-04-09 AML_DataGen_다시.txt"
+title: "[Note] 25-04-09 AML_DataGen_다시"
 categories: [Notepad, Daily]
 tags: 
 date: 2025-04-09 21:49:00 +0900

@@ -1,7 +1,7 @@
 ---
-title: "[Note] 2025-03-26 genAIagent_seminar_준비.txt"
+title: "[Note] 2025-03-26 genAIagent_seminar_준비"
 categories: [Notepad, Daily]
-tags: 
+tags: [llm, generative_ai]
 date: 2025-03-26 00:45:18 +0900
 comments: false
 --- 
