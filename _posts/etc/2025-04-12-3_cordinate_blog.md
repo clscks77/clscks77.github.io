@@ -41,6 +41,7 @@ excerpt: "크고 작은 디자인 수정에 대한 기록"
       max-width: 1050px; // 기존 850px
     }
   }
+}
 
 /* 사이드바도 50씩 줄이기 */
 $sidebar-width: 210px !default;        /* the basic width : 260px */ 
@@ -70,6 +71,8 @@ $sidebar-width-large: 300px !default;  /* screen width: >= 1650px: 350px */
       color: #fff;
       border-color: #ccb494; // 기존 파랑 2a408e
     }
+  }
+}
 
 /* 태그 색 */
 #panel-wrapper {
@@ -95,6 +98,7 @@ $sidebar-width-large: 300px !default;  /* screen width: >= 1650px: 350px */
       transition: none;
     }
   }
+}
 ```
 
 ## 코드 길어지면 자동 개행
@@ -184,6 +188,20 @@ pre {
 <!-- read time -->
       {% include read-time.html content=content prompt=true %}
 {% endraw %}
+```
+
+
+## Tag 및 Post-mata 정보 크기 키우기
+```css
+/* _sass/addon/commons.scss */
+.post-tags {
+  line-height: 1.5rem;
+  font-size: 1.2rem; // add
+}
+
+.post-meta {
+  font-size: 1.1rem; // 0.85rem
+}
 ```
 
 ## TOC 왜 2,3수준밖에 안보이지?

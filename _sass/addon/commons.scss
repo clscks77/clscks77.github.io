@@ -450,7 +450,7 @@ img[data-src] {
 }
 
 .post-meta {
-  font-size: 0.85rem;
+  font-size: 1.1rem; // 0.85rem
   word-spacing: 1px;
 
   a {
@@ -547,9 +547,10 @@ img[data-src] {
   text-align: center;
   background: var(--tag-bg);
   border-radius: 0.3rem;
-  padding: 0 0.4rem;
+  padding: 0 0.5rem;
   color: inherit;
-  line-height: 1.3rem;
+  line-height: 1.5rem;
+  font-size: 1.2rem; // add
 
   &:not(:last-child) {
     margin-right: 0.2rem;
