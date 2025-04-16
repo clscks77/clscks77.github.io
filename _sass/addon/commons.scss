@@ -7,10 +7,45 @@
   color: #000;          // 검정색 텍스트
 }
 
-.page-excerpt {
+.page-excerpt { // home이랑 post에서 짧게 글 설명하는 부분
   color: #757575;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
+
+/* post에 tip box 추가하고 싶어서 */
+.tip-box {
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin: 1em 0;
+  color: #1a1a1a;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.tip-icon {
+  font-size: 1.2em;
+  margin-right: 10px;
+  margin-top: 3px;
+} 
+.tip-blue {
+  border-left: 5px solid;
+  background-color: #e6f4ff;
+  border-color: #2196f3;
+
+  .tip-icon {
+    color: #2196f3;
+  }
+}
+.tip-yellow {
+  border: 2px solid;
+  background-color: #f7f7f7;
+  border-color: #fbc02d;
+
+  .tip-icon {
+    color: #fbc02d;
+  }
+} /* tip box 끝 */
+
 
 html {
   @media (prefers-color-scheme: light) {
@@ -112,6 +147,7 @@ blockquote {
   border-left: 5px solid var(--blockquote-border-color);
   padding-left: 1rem;
   color: var(--blockquote-text-color);
+  background-color: var(--blockquote-bg-color);
 
   &[class^="prompt-"] {
     display: flex;
@@ -450,8 +486,9 @@ img[data-src] {
 }
 
 .post-meta {
-  font-size: 1.1rem; // 0.85rem
+  font-size: 1rem; // 1.1rem
   word-spacing: 1px;
+  color: var(--post-meta-color) !important;
 
   a {
     &:not(:last-child) {

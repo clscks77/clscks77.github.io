@@ -8,6 +8,12 @@ excerpt: "크고 작은 디자인 수정에 대한 기록"
 ---
 
 ---
+<div class="tip-box tip-blue">
+    <i class="fas fa-lightbulb tip-icon"></i>
+    후..... <br>
+    ❗ inline 요소는 block 요소 바로 뒤에 두지 말 것<br>
+    ❗ 특히 줄바꿈이 있을 때는 block으로 묶어라
+</div>
 
 - [x] 본문 너비 늘리기
 - [x] 테마색 파란거 갈색으로 변경
@@ -206,4 +212,58 @@ pre {
 
 ## TOC 왜 2,3수준밖에 안보이지?
 - 그리고 3수준도 계속 보여줬음 하는데
+  
 
+## 글씨 색상 넣어주고 싶어서 snipet 셋팅
+
+```json
+// C:\Users\User\AppData\Roaming\Code\User\settings.json
+{
+    "editor.fontFamily": "Consolas, 'Courier New', 'Malgun Gothic', monospace",
+    
+    "[markdown]": {  // 여기 markdown 추가
+        "editor.quickSuggestions": {
+            "other": "on",
+            "comments": "off",
+            "strings": "off"
+        }
+    }
+}
+```
+
+```json
+// C:\Users\User\AppData\Roaming\Code\User\snippets\markdown.json 여기 파일 만들고
+// -> 설정 > 코드조각 > markdown.json으로 들어가면 됨
+{
+	"Color span": {
+		"prefix": "cl",
+		"body": [
+			"<span style=\"color:${1:#8e632a}\">${2:텍스트}</span>"
+		],
+		"description": "텍스트 색상을 지정하는 span 태그 삽입 (--my-theme-color-medium)"
+	},
+
+	"Color span with background": {
+		"prefix": "bgcl",
+		"body": [
+			"<span style=\"color:${1:#d3c7b6}; background-color:${2:#ccb494}\">${3:텍스트}</span>"
+		],
+		"description": "텍스트 색상과 배경색을 지정하는 span 태그 삽입 (--my-theme-color-more-ight)"
+	},
+
+  "Post Head": {
+    "prefix": "haeder",
+    "body": [
+      "---",
+      "title: [Note] $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE ${1:title}",
+      "categories: [${2:Notepad, Daily}]",
+      "tag: [${3:tag}]",
+      "date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND +0900",
+	  "comments: false",
+      "---",
+	  "---",
+    ],
+    "description": "NotePad 카테고리의 블로그 헤더 작성"
+  }
+}
+```

@@ -13,8 +13,9 @@
   --text-color: rgb(175, 176, 177);
   --text-muted-color: rgb(107, 116, 124);
   --heading-color: #cccccc;
-  --blockquote-border-color: var(--my-theme-color-light);
+  --blockquote-border-color: var(--my-theme-color-medium);
   --blockquote-text-color: var(--my-theme-color-light);
+  --blockquote-bg-color: #2b2b2b;
   --link-color: rgb(204, 180, 148);
   --link-underline-color: rgb(82, 108, 150);
   --button-bg: rgb(39, 40, 43);
@@ -52,6 +53,7 @@
   --pin-color: inherit;
 
   /* Posts */
+  --post-meta-color: var(--my-theme-color-light);
   --toc-highlight: rgb(116, 178, 243);
   --tag-bg: rgb(41, 40, 40);
   --tag-hover: rgb(43, 56, 62);

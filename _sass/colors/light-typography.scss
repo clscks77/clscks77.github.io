@@ -5,6 +5,7 @@
   --my-theme-color-dark: #533610;
   --my-theme-color-medium: #8e632a;
   --my-theme-color-light: #ccb494;
+  --my-theme-color-more-light: #e9d5b8;
 }
 
 @mixin light-scheme {
@@ -20,6 +21,7 @@
   --heading-color: black;
   --blockquote-border-color: var(--my-theme-color-light); // #eee
   --blockquote-text-color: var(--my-theme-color-medium); // #9a9a9a
+  --blockquote-bg-color: #fffaf5;
   --link-color: var(--my-theme-color-medium);
   --link-underline-color: #dee2e6;
   --button-bg: #fff;
@@ -56,6 +58,7 @@
   --pin-color: #999fa4;
 
   /* Posts */
+  --post-meta-color: var(--my-theme-color-medium);
   --btn-share-hover-color: var(--link-color);
   --card-border-color: #f1f1f1;
   --card-box-shadow: rgba(234, 234, 234, 0.7686274509803922);
