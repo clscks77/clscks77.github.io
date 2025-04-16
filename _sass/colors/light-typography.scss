@@ -1,6 +1,11 @@
 /*
  * The syntax light mode typography colors
  */
+ :root {
+  --my-theme-color-dark: #533610;
+  --my-theme-color-medium: #8e632a;
+  --my-theme-color-light: #ccb494;
+}
 
 @mixin light-scheme {
   /* Framework color */
@@ -13,9 +18,9 @@
   --text-color: #34343c;
   --text-muted-color: gray;
   --heading-color: black;
-  --blockquote-border-color: #eee;
-  --blockquote-text-color: #9a9a9a;
-  --link-color: #8e632a;
+  --blockquote-border-color: var(--my-theme-color-light); // #eee
+  --blockquote-text-color: var(--my-theme-color-medium); // #9a9a9a
+  --link-color: var(--my-theme-color-medium);
   --link-underline-color: #dee2e6;
   --button-bg: #fff;
   --btn-border-color: #e9ecef;
@@ -23,7 +28,7 @@
   --btn-backtotop-border-color: #f1f1f1;
   --btn-box-shadow: #eaeaea;
   --checkbox-color: #c5c5c5;
-  --checkbox-checked-color: #ccb494;
+  --checkbox-checked-color: var(--my-theme-color-light);
 
   /* Sidebar */
   --sidebar-bg: #eeeeee;
