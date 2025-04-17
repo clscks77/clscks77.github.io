@@ -30,8 +30,8 @@ excerpt: "정확히 내가 어떤 연구를 할려는건지 정리가 안된다,
 
 
 > Problem Define은 탐지 쪽으로 설명하는데, 나의 현재 연구 목표는 Data Generation이라서 좀 안맞다고 느끼나?
--  LLM으로 cross-chain 도메인의 자금세탁 탐지를 위한 synthetic 데이터셋을 만드는 연구
--  subtle pattern modeling, 전략적 시뮬레이션, 그리고 미래형 위협 예측
+-  **LLM으로 cross-chain 도메인의 자금세탁 탐지를 위한 synthetic 데이터셋을 만드는 연구**
+-  **subtle pattern modeling, 전략적 시뮬레이션, 그리고 미래형 위협 예측**
 
 ---
 ### ■ Goal
