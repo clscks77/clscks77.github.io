@@ -4,6 +4,7 @@ categories: [Notepad, Daily]
 tags: [research, llm]
 date: 2025-04-14 15:16:48 +0900
 comments: false
+excerpt: "fine-tuning을 어떻게 하면 좋을지부터 고민 시작"
 --- 
 ---
 
