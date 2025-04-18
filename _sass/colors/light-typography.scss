@@ -2,7 +2,7 @@
  * The syntax light mode typography colors
  */
  :root {
-  --my-theme-color-dark: #533610;
+  --my-theme-color-dark: #724a16;
   --my-theme-color-medium: #8e632a;
   --my-theme-color-light: #ccb494;
   --my-theme-color-more-light: #e9d5b8;
@@ -20,7 +20,7 @@
   --text-muted-color: gray;
   --heading-color: black;
   --blockquote-border-color: var(--my-theme-color-light); // #eee
-  --blockquote-text-color: var(--my-theme-color-medium); // #9a9a9a
+  --blockquote-text-color: var(--my-theme-color-dark); // #9a9a9a
   --blockquote-bg-color: #fffaf5;
   --link-color: var(--my-theme-color-medium);
   --link-underline-color: #dee2e6;

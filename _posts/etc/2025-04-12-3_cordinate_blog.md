@@ -28,6 +28,7 @@ excerpt: "크고 작은 디자인 수정에 대한 기록"
 - [ ] post글 젤 밑에 같은 카테고리의 글 리스트 5개 단위로 보여주는거 필요
 - [ ] Top에 있는 카테고리 잘 안잡히는거 수정 + 위치 조정
 - [ ] TOC 손보기
+- [ ] 캘린더에 Daily 글 표시하는 기능 만들어볼까?
 
 > jekyll Doc 참고: <https://jekyllrb.com/docs/posts/>
 
