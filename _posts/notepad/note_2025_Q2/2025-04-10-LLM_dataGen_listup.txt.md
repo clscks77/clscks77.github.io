@@ -1,10 +1,10 @@
 ---
 title: "[Note] 25-04-10 LLM_dataGen_listup"
 categories: [Notepad, Daily]
-tags: 
+tags: [research, llm, synthetic_data]
 date: 2025-04-10 21:49:00 +0900
 comments: false
-excerpt: "Awesome-LLM-Synthetic-Data 논문들 훑어보기"
+excerpt: "(연구 동향 파악) Awesome-LLM-Synthetic-Data 논문들 훑어보기"
 ---
 ---
 

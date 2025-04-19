@@ -1,9 +1,10 @@
 ---
 title: "[Note] 25-04-09 AML_DataGen_다시"
 categories: [Notepad, Daily]
-tags: 
+tags: [research, aml, synthetic_data, llm]
 date: 2025-04-09 21:49:00 +0900
 comments: false
+excerpt: "자금세탁탐지를 위한 cross-chain 합성 데이터셋을 만들자, 근데 LLM을 쓴"
 ---
 ---
 
