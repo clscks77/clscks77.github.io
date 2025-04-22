@@ -120,3 +120,5 @@ Pretraining 방식 | MLM | AutoRegressive LM | Denoising / Seq2Seq
     - Diffusion Model 안 쓸 것 같지만, 공부는 따로 해두자 <br>
     - VAE 상세하게 스터디 (Encoder, Decoder, ELBO_loss) + latent space
 </div>
+
+
