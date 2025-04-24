@@ -7,6 +7,16 @@
   color: #000;          // 검정색 텍스트
 }
 
+.search-post-title { // 검색 결과 글 제목
+  color: var(--heading-color)!important;
+  font-weight: bold !important;
+}
+
+.search-post-excerpt { // 검색 결과 글 설명
+  color: var(--post-meta-color)!important;
+  font-weight: bold !important;
+}
+
 .page-excerpt { // home이랑 post에서 짧게 글 설명하는 부분
   color: #757575;
   font-size: 1rem;
