@@ -1,0 +1,89 @@
+---
+layout: page
+---
+
+<!-- 카테고리 색상 Legend -->
+
+
+<!-- 캘린더 본체 -->
+<div id="calendar"></div>
+
+<!-- FullCalendar 라이브러리 -->
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const calendarEl = document.getElementById('calendar');
+
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      events: [
+        {% for post in site.posts %}
+        {
+          title: "{{ post.categories[1] | join: ', ' }}{% if post.tags %} [{{ post.tags | join: ', ' }}]{% endif %}",
+          start: "{{ post.date | date: '%Y-%m-%d' }}",
+          url: "{{ post.url }}",
+          className: ["category-{{ post.categories[0] | slugify }}"],
+          extendedProps: {
+            fullTitle: "{{ post.title | escape }}"
+          }
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ],
+      eventDidMount: function (info) {
+        const tooltip = document.createElement("div");
+        tooltip.innerText = info.event.extendedProps.fullTitle;
+        tooltip.style.position = "absolute";
+        tooltip.style.background = "#333";
+        tooltip.style.color = "#fff";
+        tooltip.style.padding = "4px 8px";
+        tooltip.style.borderRadius = "4px";
+        tooltip.style.fontSize = "0.8rem";
+        tooltip.style.pointerEvents = "none";
+        tooltip.style.zIndex = 1000;
+        tooltip.style.display = "none";
+
+        document.body.appendChild(tooltip);
+
+        info.el.addEventListener("mouseenter", function (e) {
+          tooltip.style.left = e.pageX + "px";
+          tooltip.style.top = e.pageY + "px";
+          tooltip.style.display = "block";
+        });
+
+        info.el.addEventListener("mousemove", function (e) {
+          tooltip.style.left = e.pageX + "px";
+          tooltip.style.top = e.pageY + "px";
+        });
+
+        info.el.addEventListener("mouseleave", function () {
+          tooltip.style.display = "none";
+        });
+      }
+    });
+
+    calendar.render();
+  });
+</script>
+
+<!-- 카테고리별 색상 적용 -->
+<style>
+  {% for key in site.data.categories %}
+    {% assign cat = site.data.categories[key] %}
+    .fc-event.category-{{ key }} {
+      --fc-event-bg-color: {{ site.data.categories[key].color }} !important;
+      --fc-event-text-color: #fff !important;
+      --fc-event-border-color: transparent !important;
+    }
+    .debug-{{ key }} {
+      color: red;
+    }
+    .debug-{{ site.data.categories[key].color }} {
+      color: red;
+    }
+  {% endfor %}
+</style>
+
+
+
+
