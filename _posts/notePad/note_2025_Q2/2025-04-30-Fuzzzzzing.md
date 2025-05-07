@@ -1,10 +1,10 @@
 ---
 title: "[Note] 2025-04-30 Fuzzzzzing"
 categories: [Notepad, Daily]
-tags: symbolic/concolic execution 및 constraint solving
+tags: [attack, fuzzing]
 date: 2025-04-30 10:37:33 +0900
 comments: false
-excerpt: ""
+excerpt: "symbolic/concolic execution 및 constraint solving"
 --- 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "[Gen] Mixed-Type Tabular Data Synthesis with Score-based Diffusion in Latent Space [ICLR 2024]"
 categories: [PaperReview, GenerativeAI]
-tags: [latent, diffussion, synthetic_data]
+tags: [latent, diffusion, synthetic_data]
 date: 2025-05-02 19:03:21 +0900
 comments: false
 excerpt: "VAE + Diff 데이터 생성 관련 논문 리뷰: Mixed-Type Tabular Data Synthesis"
